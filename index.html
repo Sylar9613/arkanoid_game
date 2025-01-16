@@ -1,0 +1,26 @@
+<title>Arkanoid en Javascript</title>
+
+<style>
+    body {
+        background: #bbb;
+        display: grid;
+        place-content: center;
+    }
+
+    #gameCanvas {
+        border: 6px solid #111;
+        border-bottom: transparent;
+        background: url('./assets/bkg.png') repeat;
+        margin: 0 auto;
+        display: block;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+    }
+</style>
+
+<canvas id="gameCanvas"></canvas>
+
+<img hidden id="sprite" src="./assets/sprite.png" alt="Sprite Arkanoid"/>
+
+<img hidden id="bricks" src="./assets/bricks.png" alt="Sprite Bricks Arkanoid"/>
+
+<script src="./main.js"></script>
