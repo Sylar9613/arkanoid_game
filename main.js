@@ -228,6 +228,7 @@ function cleanCanvas() {
 function initEvents() {
     document.addEventListener('keydown', keyDownHandler);
     document.addEventListener('keyup', keyUpHandler);
+    document.addEventListener('keydown', pauseHandler);
 
     function keyDownHandler(event) {
         const { key } = event;
@@ -245,6 +246,11 @@ function initEvents() {
             leftPressed = false;
         }
     }
+    function pauseHandler(event) {
+        if (event.code === 'Space') {
+            pauseGame();
+        }
+    }
 }
    
 // a que velocidad de fps queremos que renderice nuestro juego
@@ -258,8 +264,23 @@ let framesPerSec = fps;
 
 let gameOver = false;
 
+// Pause function
+let paused = false;
+
+function pauseGame() {
+    paused =!paused;
+    if (paused) {
+        cancelAnimationFrame(draw);
+    } else {
+        draw();
+    }
+}
+
 function draw() {
     if (gameOver) return;
+
+    // Pause the game
+    if (paused) return;
 
     // Update the game state
     window.requestAnimationFrame(draw);
