@@ -16,6 +16,14 @@
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
     }
 
+    #setupCanvas {
+        border: 6px solid #555;
+        margin: 0 auto;
+        display: block;
+        background: #666;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+    }
+
     #heart {
         position: absolute;
         top: 10px;
@@ -25,12 +33,14 @@
     }
 </style>
 
-<img id="heart" src="./assets/heart.png" alt="Sprite Heart" width="40">
+<canvas id="setupCanvas"></canvas>
 
 <canvas id="gameCanvas"></canvas>
 
 <img hidden id="sprite" src="./assets/sprite.png" alt="Sprite Arkanoid"/>
 
 <img hidden id="bricks" src="./assets/bricks.png" alt="Sprite Bricks Arkanoid"/>
+
+<img hidden id="heart" src="./assets/heart.png" alt="Sprite Heart">
 
 <script src="./main.js"></script>
